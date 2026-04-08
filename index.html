@@ -1,0 +1,177 @@
+<meta charset="UTF-8">
+<style type="text/css">body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #fcfcfc; }
+  
+  /* Контейнер для Hero-блоку з ефектом фону */
+  .hero-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Напівпрозорий збільшений фон */
+  .hero-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg?fresh=1&PIMAGE_ID=7256549130');
+    background-repeat: no-repeat;
+    background-position: 30% center;
+    background-size: 160%;
+    opacity: 0.08;
+    z-index: 1;
+  }
+
+  .container { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  /* Хлібні крихти */
+  .breadcrumbs { font-size: 13px; color: #e67e22; margin-bottom: 20px; }
+  
+  /* Структура Hero контенту */
+  .hero-content { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+  .hero-text { flex: 1; min-width: 320px; }
+  .hero-image { flex: 0 0 350px; text-align: center; }
+  .hero-image img { max-width: 100%; height: auto; border-radius: 10px; }
+
+  h1 { font-size: 34px; color: #2c3e50; margin: 0 0 15px 0; line-height: 1.2; }
+  .intro-p { font-size: 16px; margin-bottom: 20px; }
+
+  .service-tags { margin-bottom: 25px; }
+  .tag { color: #7f8c8d; font-size: 13px; margin-right: 15px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* Кнопки зв'язку */
+  .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-orange { background: #ff5500; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; border: none; cursor: pointer; }
+  .btn-blue { background: #2196f3; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3); }
+
+  /* Секції нижче */
+  .content-section { padding: 40px 0; background: #fff; border-bottom: 1px solid #eee; }
+  .section-container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  h2, h3 { color: #2c3e50; margin-top: 0; }
+
+  /* Таблиця */
+  .specs-table { width: 100%; border-collapse: collapse; margin: 25px 0; }
+  .specs-table th { background: #f8f9fa; padding: 15px; border: 1px solid #dee2e6; text-align: left; }
+  .specs-table td { padding: 15px; border: 1px solid #dee2e6; }
+
+  /* Блоки з іконками */
+  .info-block { margin-bottom: 35px; }
+  .info-header { font-size: 22px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+  
+  .order-now-block { text-align: center; padding: 60px 20px; }
+  .btn-order { background: #ff5500; color: white; padding: 18px 50px; border-radius: 30px; font-size: 22px; border: none; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
+  .btn-order:hover { background: #e64a19; box-shadow: 0 5px 15px rgba(255, 85, 0, 0.4); }
+
+  .faq-item { background: #fdfdfd; padding: 20px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 15px; }
+  .faq-q { color: #2980b9; margin-bottom: 10px; }
+</style>
+<div class="hero-wrapper">
+<div class="container">
+<div class="breadcrumbs">Головна &raquo; Послуги &raquo; Заправка картриджів &raquo; <strong>Заправка картриджа Canon 728</strong></div>
+
+<div class="hero-content">
+<div class="hero-text">
+<h1>Заправка картриджа Canon 728 у Львові</h1>
+
+<p class="intro-p">Заправка картриджа Canon 728 у Львові. Швидко, якісно, з гарантією. Підходить для принтерів <strong>Canon i-SENSYS MF4410, MF4430, MF4450, MF4570dn</strong>.</p>
+
+<div class="service-tags"><span class="tag"><strong>РЕМОНТ ТЕХНІКИ</strong></span> <span class="tag"><strong>ЗАПРАВКА КАРТРИДЖІВ</strong></span> <span class="tag"><strong>ОБСЛУГОВУВАННЯ</strong></span></div>
+
+<div class="contact-buttons"><a class="btn-orange" href="https://ironservice.ua/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjUzIiwidG9nZ2xlIjpmYWxzZX0%3D"><strong>Консультація ↗</strong></a> <a class="btn-blue" href="tel:0989224075"><strong>(098) 922 40 75</strong></a> <a class="btn-blue" href="tel:0672783940"><strong>(067) 278 39 40</strong></a></div>
+</div>
+
+<div class="hero-image"><img alt="Canon 728" src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg?fresh=1&amp;PIMAGE_ID=7256549130" /></div>
+</div>
+</div>
+</div>
+
+<div class="content-section">
+<div class="section-container">
+<div class="info-block">
+<div class="info-header">🔧 <strong>Що входить у заправку картриджа Canon 728</strong></div>
+
+<ul>
+	<li>очистка картриджа від залишків тонера та паперового пилу;</li>
+	<li>заправка якісним тонером, що відповідає характеристикам Canon;</li>
+	<li>заміна чіпа (за потреби для коректної індикації);</li>
+	<li>ретельна перевірка роботи принтера після складання.</li>
+</ul>
+
+<p>⚠️ <strong>У моделі Canon 728 професійна чистка всіх вузлів є запорукою відсутності дефектів на папері.</strong></p>
+</div>
+
+<table class="specs-table">
+	<thead>
+		<tr>
+			<th>Тип картриджа</th>
+			<th>Парт номер</th>
+			<th>Колір</th>
+			<th>Ресурс (стор.)</th>
+			<th>Чіп</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><strong>Canon 728</strong></td>
+			<td>3500B002</td>
+			<td>Чорний</td>
+			<td>2100</td>
+			<td>Не обов&rsquo;язково</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="info-block">
+<div class="info-header">🚀 <strong>Переваги заправки в нашому сервісі</strong></div>
+
+<ul>
+	<li><strong>швидко</strong> &mdash; всього 15&ndash;30 хвилин вашого часу;</li>
+	<li><strong>якісний тонер</strong> &mdash; забезпечує заводську насиченість друку;</li>
+	<li><strong>гарантія на роботу</strong> &mdash; ми відповідаємо за якість кожної заправки;</li>
+	<li><strong>великий досвід</strong> &mdash; ми знаємо всі тонкощі обслуговування серії Canon.</li>
+</ul>
+
+<p><strong>Ми вже успішно заправили сотні картриджів Canon 728, забезпечуючи ідеальну якість друку.</strong></p>
+</div>
+
+<div class="info-block">
+<div class="info-header">⚙️ <strong>Особливості заправки картриджа Canon 728</strong></div>
+
+<ul>
+	<li>можливість багаторазового відновлення ресурсу;</li>
+	<li>стабільна робота без обов&#39;язкової заміни чіпа.</li>
+</ul>
+
+<p>👉 <strong>Подати заявку на заправку картриджа Canon 728 у Львові можна прямо зараз через форму на сайті.</strong></p>
+</div>
+
+<div class="info-block">
+<div class="info-header">❓ <strong>Поширені питання</strong></div>
+
+<div class="faq-item">
+<div class="faq-q"><strong>Чи потрібно міняти чіп у Canon 728?</strong></div>
+
+<div>Зазвичай ні, картридж чудово працює без заміни чіпа, що дозволяє зекономити на сервісі.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q"><strong>Скільки часу займає процедура?</strong></div>
+
+<div>Майстер виконує роботу за 15&ndash;30 хвилин.</div>
+</div>
+</div>
+
+<div class="order-now-block"><a class="btn-order" href="https://ironservice.ua/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjUzIiwidG9nZ2xlIjpmYWxzZX0%3D"><strong>Подати заявку</strong></a>
+
+<p style="margin-top:15px">Професійний сервіс <strong>у Львові</strong>: швидко, надійно, з гарантією!</p>
+</div>
+</div>
+</div>
