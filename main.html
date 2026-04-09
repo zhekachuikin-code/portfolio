@@ -24,7 +24,7 @@
     .hero-text h1 { font-size: 42px; margin: 0 0 10px 0; }
     .hero-text p { font-size: 22px; opacity: 0.9; margin: 0; }
 
-    /* Блок навичок (2х2) */
+    /* Блок навичок */
     .skills-row { 
       display: grid; grid-template-columns: 1fr 1fr; gap: 25px; 
       margin: -40px auto 60px; position: relative; z-index: 10; max-width: 1000px;
@@ -57,12 +57,12 @@
     }
     .btn-link:hover { background: #2c3e50; color: white; border-color: #2c3e50; }
 
-    /* Тестові кейси — БІЛЬШ ЯСКРАВІ ТА ЖИВІ */
+    /* Тестові кейси — З оновленим посиланням на canon.html */
     .case-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 80px; }
     .case-links a { text-decoration: none; color: inherit; display: block; }
     .case-box { 
       position: relative; height: 320px; border-radius: 25px; overflow: hidden; 
-      cursor: pointer; background: #eee; /* Світлий фон замість чорного */
+      cursor: pointer; background: #eee;
       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
     .case-box img { width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: 0.5s; }
@@ -80,31 +80,25 @@
     .calc-card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; text-align: center; }
     .calc-group { margin-bottom: 20px; text-align: left; }
     .calc-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
-    .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; }
+    .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; transition: 0.3s; }
+    .calc-group input:focus { border-color: #ff6700; outline: none; }
     
     #totalPriceBox { margin-top: 30px; padding: 25px; background: #ff6700; color: white; border-radius: 20px; text-align: center; font-size: 24px; font-weight: bold; transition: 0.4s; }
     .discount-badge { font-size: 14px; display: block; opacity: 0.9; margin-top: 5px; font-weight: normal; }
 
-    /* Контакти — ВИПРАВЛЕНИЙ HOVER */
+    /* Контакти */
     .contacts-section { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
     .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
     
     .contact-icon-btn { 
       width: 70px; height: 70px; border-radius: 50%; 
       display: flex; align-items: center; justify-content: center; 
-      transition: all 0.3s ease-in-out; /* Плавна анімація для всього */
+      transition: all 0.3s ease-in-out; 
       box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
       background: #fff; overflow: hidden; 
       box-sizing: border-box; padding: 10px; cursor: pointer; border: none; position: relative;
     }
-    
-    /* Ефект при наведенні для ВСІХ кнопок у контактах */
-    .contact-icon-btn:hover { 
-      transform: translateY(-8px) scale(1.1); 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
-      background: #fdfdfd;
-    }
-
+    .contact-icon-btn:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
     .contact-icon-btn img { width: 100%; height: 100%; object-fit: contain; }
     
     .tooltip { 
@@ -172,7 +166,8 @@
 
   <h2 class="section-title">Тестові кейси</h2>
   <div class="case-links">
-    <a href="index.html">
+    <!-- ТУТ ЗМІНЕНО index.html НА canon.html -->
+    <a href="canon.html">
       <div class="case-box">
         <img src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg" alt="Canon">
         <div class="case-info">
