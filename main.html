@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Євген — Портфоліо Контент-менеджера</title>
+  
+  <!-- Підключення бібліотеки іконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <style type="text/css">
     body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #fdfdfd; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -29,7 +33,7 @@
     .hero-text h1 { font-size: 42px; margin: 0 0 10px 0; }
     .hero-text p { font-size: 22px; opacity: 0.9; margin: 0; }
 
-    /* Блок навичок */
+    /* Блок навичок (2х2 на ПК) */
     .skills-row { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
@@ -53,7 +57,7 @@
 
     .section-title { text-align: center; font-size: 32px; color: #2c3e50; margin: 60px 0 30px; }
 
-    /* Реальні роботи — Кнопки перегляду */
+    /* Приклади робіт */
     .real-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
     .work-card { background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
     .work-card:hover { border-color: #2c3e50; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
@@ -62,7 +66,6 @@
     .work-desc { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: center; }
     .work-desc h4 { margin: 0 0 20px 0; font-size: 17px; line-height: 1.4; color: #333; height: 50px; overflow: hidden; }
     
-    /* Стриманий стиль кнопки для портфоліо */
     .btn-link { 
       display: inline-block; 
       text-align: center; 
@@ -77,11 +80,7 @@
       border: 1px solid #dee2e6;
       font-size: 15px;
     }
-    .btn-link:hover { 
-      background: #2c3e50; 
-      color: white; 
-      border-color: #2c3e50;
-    }
+    .btn-link:hover { background: #2c3e50; color: white; border-color: #2c3e50; }
 
     /* Тестові кейси */
     .case-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 80px; }
@@ -94,7 +93,27 @@
     .case-info p { margin: 0 0 20px 0; font-size: 16px; opacity: 0.9; }
     .btn-case { display: inline-block; width: fit-content; padding: 10px 25px; background: #ff6700; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; }
 
-    @media (max-width: 500px) { .case-links { grid-template-columns: 1fr; } }
+    /* Блок контактів з іконками */
+    .contacts-section { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
+    .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+    .contact-icon-btn { 
+      width: 70px; 
+      height: 70px; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 32px; 
+      color: white; 
+      text-decoration: none; 
+      transition: 0.3s; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .contact-icon-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    
+    .btn-tg { background: #0088cc; }
+    .btn-viber { background: #7360f2; }
+    .btn-mail { background: #ff6700; }
 
     /* Футер */
     .footer { text-align: center; padding: 60px 0; background: #2c3e50; color: #bdc3c7; border-radius: 40px 40px 0 0; }
@@ -163,7 +182,6 @@
 
   <h2 class="section-title">Тестові кейси</h2>
   <div class="case-links">
-    
     <a href="index.html">
       <div class="case-box">
         <img src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg" alt="Canon">
@@ -185,14 +203,32 @@
         </div>
       </div>
     </a>
+  </div>
 
+  <div class="contacts-section">
+    <h3><strong>Обговоримо ваш проект?</strong></h3>
+    <p>Я завжди на зв'язку. Натисніть на іконку зручного месенджера:</p>
+    
+    <div class="contact-buttons">
+      <!-- Використовуємо ваші теги іконок -->
+      <a href="https://t.me/evgen_chuikin" target="_blank" class="contact-icon-btn btn-tg" title="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+      
+      <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn btn-viber" title="Viber">
+        <i class="fa-brands fa-viber"></i>
+      </a>
+      
+      <a href="mailto:zheka.chuikin@gmail.com" class="contact-icon-btn btn-mail" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
   </div>
 </div>
 
 <div class="footer">
   <div class="container">
     <p><strong>Євген</strong> — Контент-менеджер та SEO-спеціаліст маркетплейсів</p>
-    <p>Працюю на результат, навіть у складних технічних нішах.</p>
     <p>© 2026. Всі права захищені.</p>
   </div>
 </div>
