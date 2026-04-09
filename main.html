@@ -36,12 +36,11 @@
     @media (max-width: 768px) {
       .skills-row { grid-template-columns: 1fr; margin-top: 20px; padding: 0 10px; }
       .hero-content { flex-direction: column; text-align: center; gap: 20px; }
-      .hero-photo { width: 200px; height: 200px; flex: 0 0 200px; }
     }
 
     .section-title { text-align: center; font-size: 32px; color: #2c3e50; margin: 60px 0 30px; }
 
-    /* Приклади робіт — БЕЗ кнопок "Купити" */
+    /* Приклади робіт Клондайк */
     .real-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
     .work-card { background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
     .work-card:hover { border-color: #2c3e50; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
@@ -58,40 +57,56 @@
     }
     .btn-link:hover { background: #2c3e50; color: white; border-color: #2c3e50; }
 
-    /* Тестові кейси — ЧИТАБЕЛЬНИЙ БІЛИЙ ТЕКСТ */
+    /* Тестові кейси — БІЛЬШ ЯСКРАВІ ТА ЖИВІ */
     .case-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 80px; }
     .case-links a { text-decoration: none; color: inherit; display: block; }
-    .case-box { position: relative; height: 300px; border-radius: 25px; overflow: hidden; cursor: pointer; background: #000; }
-    .case-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.5s; }
-    .case-box:hover img { opacity: 0.4; transform: scale(1.05); }
-    .case-info { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; }
-    .case-info h3 { margin: 0 0 10px 0; font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); color: #ffffff !important; font-weight: bold; }
-    .case-info p { margin: 0 0 20px 0; font-size: 16px; opacity: 1; color: #ffffff; }
+    .case-box { 
+      position: relative; height: 320px; border-radius: 25px; overflow: hidden; 
+      cursor: pointer; background: #eee; /* Світлий фон замість чорного */
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .case-box img { width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: 0.5s; }
+    .case-box::after {
+      content: ''; position: absolute; inset: 0; 
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%); 
+    }
+    .case-box:hover img { transform: scale(1.05); }
+    .case-info { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; z-index: 1; }
+    .case-info h3 { margin: 0 0 8px 0; font-size: 26px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); font-weight: bold; color: #ffffff !important; }
+    .case-info p { margin: 0 0 15px 0; font-size: 16px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); color: #ffffff; }
 
     /* Калькулятор послуг */
     .calculator-section { background: #f4f7f6; padding: 60px 0; border-radius: 40px; margin-bottom: 60px; }
     .calc-card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; text-align: center; }
     .calc-group { margin-bottom: 20px; text-align: left; }
     .calc-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
-    .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; transition: 0.3s; }
-    .calc-group input:focus { border-color: #ff6700; outline: none; }
+    .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; }
     
     #totalPriceBox { margin-top: 30px; padding: 25px; background: #ff6700; color: white; border-radius: 20px; text-align: center; font-size: 24px; font-weight: bold; transition: 0.4s; }
     .discount-badge { font-size: 14px; display: block; opacity: 0.9; margin-top: 5px; font-weight: normal; }
 
-    /* Контакти */
+    /* Контакти — ВИПРАВЛЕНИЙ HOVER */
     .contacts-section { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
     .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+    
     .contact-icon-btn { 
       width: 70px; height: 70px; border-radius: 50%; 
       display: flex; align-items: center; justify-content: center; 
-      text-decoration: none; transition: 0.3s; 
+      transition: all 0.3s ease-in-out; /* Плавна анімація для всього */
       box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
       background: #fff; overflow: hidden; 
       box-sizing: border-box; padding: 10px; cursor: pointer; border: none; position: relative;
     }
+    
+    /* Ефект при наведенні для ВСІХ кнопок у контактах */
+    .contact-icon-btn:hover { 
+      transform: translateY(-8px) scale(1.1); 
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
+      background: #fdfdfd;
+    }
+
     .contact-icon-btn img { width: 100%; height: 100%; object-fit: contain; }
-    .contact-icon-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    
     .tooltip { 
       position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%); 
       background: #333; color: #fff; padding: 5px 12px; 
@@ -118,7 +133,6 @@
 </div>
 
 <div class="container">
-  <!-- Навички -->
   <div class="skills-row">
     <div class="skill-item">
       <h3><strong>Досвід на Prom.ua</strong></h3>
@@ -180,7 +194,6 @@
     </a>
   </div>
 
-  <!-- КАЛЬКУЛЯТОР -->
   <div class="calculator-section">
     <h2 class="section-title" style="margin-top: 0;">Калькулятор послуг</h2>
     <div class="calc-card">
@@ -206,9 +219,13 @@
   <div class="contacts-section">
     <h3><strong>Обговоримо ваш проект?</strong></h3>
     <div class="contact-buttons">
-      <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn"><img src="https://i.postimg.cc/C1z1Q56p/Viber-Messenger.png" alt="Viber"></a>
-      <a href="https://t.me/evgen_chuikin" target="_blank" class="contact-icon-btn"><img src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" alt="Telegram"></a>
-      <button onclick="copyMyEmail()" class="contact-icon-btn">
+      <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn" title="Viber">
+        <img src="https://i.postimg.cc/C1z1Q56p/Viber-Messenger.png" alt="Viber">
+      </a>
+      <a href="https://t.me/evgen_chuikin" target="_blank" class="contact-icon-btn" title="Telegram">
+        <img src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" alt="Telegram">
+      </a>
+      <button onclick="copyMyEmail()" class="contact-icon-btn" title="Копіювати пошту">
         <span id="copyTooltip" class="tooltip">Емейл скопійовано!</span>
         <img src="https://i.postimg.cc/pLwqT5zg/Mail-Messenger.png" alt="Email">
       </button>
