@@ -1,281 +1,194 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Євген — Портфоліо Контент-менеджера</title>
-  
-  <style type="text/css">
-    body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #fdfdfd; }
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style type="text/css">body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f8f9fa; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     
-    /* Шапка сайту */
-    .hero-wrapper { position: relative; width: 100%; padding: 80px 0; background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; border-radius: 0 0 50px 50px; overflow: hidden; }
-    .hero-content { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    /* Шапка сайту (логотип видалено) */
+    .hero-wrapper { position: relative; width: 100%; padding: 100px 0 140px; background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; border-radius: 0 0 80px 80px; overflow: hidden; text-align: center; }
+    .hero-content { display: flex; align-items: center; justify-content: center; gap: 50px; flex-wrap: wrap; }
     
     .hero-photo { 
-      width: 240px;
-      height: 240px;
-      flex: 0 0 240px;
-      border-radius: 50%; 
-      overflow: hidden; 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      background: transparent; 
-      border: none;
-      padding: 0;
+      width: 260px; height: 260px; flex: 0 0 260px; border-radius: 50%; overflow: hidden; 
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4); border: 8px solid rgba(255,255,255,0.2);
     }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     
-    .hero-text { flex: 1; min-width: 300px; }
-    .hero-text h1 { font-size: 42px; margin: 0 0 10px 0; }
-    .hero-text p { font-size: 22px; opacity: 0.9; margin: 0; }
+    .hero-text { flex: 1; min-width: 320px; text-align: left; }
+    .hero-text h1 { font-size: 48px; margin: 0 0 15px 0; font-weight: 800; }
+    .hero-text p { font-size: 24px; opacity: 0.95; margin: 0; }
 
     /* Блок навичок */
     .skills-row { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 25px; 
-      margin: -40px auto 60px; 
-      position: relative; 
-      z-index: 10; 
-      max-width: 1000px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: -60px auto 80px; 
+      position: relative; z-index: 10; max-width: 1000px;
     }
-    .skill-item { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #ff6700; text-align: center; transition: 0.3s; }
-    .skill-item:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-    .skill-item h3 { color: #ff6700; margin-top: 0; font-size: 19px; margin-bottom: 10px; }
+    .skill-item { background: white; padding: 35px; border-radius: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.07); border-top: 6px solid #ff6700; transition: 0.4s; text-align: left; }
+    .skill-item:hover { transform: translateY(-10px); box-shadow: 0 20px 45px rgba(0,0,0,0.12); }
+    .skill-item h3 { color: #ff6700; margin-top: 0; font-size: 20px; margin-bottom: 12px; }
     
     @media (max-width: 768px) {
-      .skills-row { grid-template-columns: 1fr; margin-top: 20px; padding: 0 10px; }
-      .hero-content { flex-direction: column; text-align: center; gap: 20px; }
-      .hero-text h1 { font-size: 32px; }
-      .hero-text p { font-size: 18px; }
-      .hero-photo { width: 200px; height: 200px; flex: 0 0 200px; }
+      .skills-row { grid-template-columns: 1fr; margin-top: 20px; padding: 0 15px; }
+      .hero-content { flex-direction: column; text-align: center; }
+      .hero-text { text-align: center; }
     }
 
-    .section-title { text-align: center; font-size: 32px; color: #2c3e50; margin: 60px 0 30px; }
+    .section-title { text-align: center; font-size: 36px; color: #2c3e50; margin: 80px 0 40px; font-weight: 800; }
 
-    /* Приклади робіт */
-    .real-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
-    .work-card { background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
-    .work-card:hover { border-color: #2c3e50; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    .work-img { height: 250px; padding: 15px; background: #fff; display: flex; align-items: center; justify-content: center; }
+    /* Картки робіт */
+    .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; margin-bottom: 80px; }
+    .work-card { background: white; border-radius: 30px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; box-shadow: 0 10px 25px rgba(0,0,0,0.03); }
+    .work-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+    .work-img { height: 260px; padding: 20px; background: #fff; display: flex; align-items: center; justify-content: center; }
     .work-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .work-desc { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: center; }
-    .work-desc h4 { margin: 0 0 20px 0; font-size: 17px; line-height: 1.4; color: #333; height: 50px; overflow: hidden; }
+    .work-desc { padding: 30px; flex-grow: 1; text-align: center; }
+    .work-desc h4 { margin: 0 0 25px 0; font-size: 18px; line-height: 1.5; color: #2c3e50; min-height: 54px; }
     
-    .btn-link { 
-      display: inline-block; 
-      text-align: center; 
-      padding: 12px 20px; 
-      background: #f1f3f5; 
-      color: #2c3e50; 
-      text-decoration: none; 
-      border-radius: 12px; 
-      font-weight: bold; 
-      transition: 0.3s; 
-      margin-top: auto; 
-      border: 1px solid #dee2e6;
-      font-size: 15px;
+    .btn-action { 
+      display: inline-block; padding: 14px 28px; background: #ff6700; color: white; 
+      text-decoration: none; border-radius: 15px; font-weight: bold; transition: 0.3s; width: 100%; box-sizing: border-box;
     }
-    .btn-link:hover { background: #2c3e50; color: white; border-color: #2c3e50; }
+    .btn-action:hover { background: #e65c00; transform: scale(1.02); }
 
     /* Тестові кейси */
-    .case-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 80px; }
-    .case-links a { text-decoration: none; color: inherit; display: block; }
-    .case-box { position: relative; height: 300px; border-radius: 25px; overflow: hidden; cursor: pointer; background: #000; }
-    .case-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.5s; }
-    .case-box:hover img { opacity: 0.4; transform: scale(1.05); }
-    .case-info { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; }
-    .case-info h3 { margin: 0 0 10px 0; font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-    .case-info p { margin: 0 0 20px 0; font-size: 16px; opacity: 0.9; }
-    .btn-case { display: inline-block; width: fit-content; padding: 10px 25px; background: #ff6700; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; }
+    .case-box { position: relative; height: 350px; border-radius: 35px; overflow: hidden; background: #000; cursor: pointer; }
+    .case-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; transition: 0.6s; }
+    .case-box:hover img { opacity: 0.35; transform: scale(1.08); }
+    .case-info { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; color: white; }
+    .case-info h3 { margin: 0 0 10px 0; font-size: 28px; font-weight: 800; }
+    .case-info p { margin: 0 0 25px 0; font-size: 16px; opacity: 0.9; }
 
-    /* Блок контактів з іконками */
-    .contacts-section { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
-    .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+    /* Калькулятор */
+    .calculator-section { background: #fff; padding: 80px 20px; border-radius: 60px; box-shadow: 0 15px 50px rgba(0,0,0,0.04); margin-bottom: 80px; border: 1px solid rgba(0,0,0,0.02); }
+    .calc-card { max-width: 550px; margin: 0 auto; }
+    .calc-group { margin-bottom: 25px; }
+    .calc-group label { display: block; font-weight: 700; margin-bottom: 10px; color: #2c3e50; }
+    .calc-group input, .calc-group select { width: 100%; padding: 16px; border: 2px solid #f1f1f1; border-radius: 18px; font-size: 16px; background: #fdfdfd; transition: 0.3s; }
+    .calc-group input:focus { border-color: #ff6700; outline: none; background: #fff; }
     
+    .calc-result { 
+      margin-top: 35px; padding: 30px; background: #ff6700; color: white; 
+      border-radius: 25px; text-align: center; font-size: 26px; font-weight: 800; 
+      transition: 0.5s; box-shadow: 0 10px 25px rgba(255,103,0,0.3);
+    }
+    .discount-badge { font-size: 15px; display: block; margin-top: 8px; font-weight: 400; opacity: 0.95; }
+
+    /* Контакти */
+    .contacts-section { text-align: center; margin-bottom: 100px; }
+    .contact-buttons { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 40px; }
     .contact-icon-btn { 
-      width: 70px; 
-      height: 70px; 
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      text-decoration: none; 
-      transition: 0.3s; 
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      background: #fff; 
-      overflow: hidden; 
-      box-sizing: border-box;
-      padding: 10px;
-      cursor: pointer;
-      border: none;
-      position: relative;
+      width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; 
+      justify-content: center; transition: 0.4s; box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+      background: #fff; padding: 12px; cursor: pointer; border: none; position: relative;
     }
-    
     .contact-icon-btn img { width: 100%; height: 100%; object-fit: contain; }
-    .contact-icon-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-
-    /* Підказка "Скопійовано" */
-    .tooltip {
-      position: absolute;
-      bottom: 85px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: 12px;
-      opacity: 0;
-      transition: 0.3s;
-      pointer-events: none;
-      white-space: nowrap;
-      z-index: 100;
+    .contact-icon-btn:hover { transform: translateY(-8px) rotate(5deg); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+    
+    .tooltip { 
+      position: absolute; bottom: 95px; left: 50%; transform: translateX(-50%); 
+      background: #2c3e50; color: #fff; padding: 8px 15px; border-radius: 10px; 
+      font-size: 13px; opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap;
     }
-    .tooltip.show { opacity: 1; bottom: 95px; }
+    .tooltip.show { opacity: 1; bottom: 105px; }
 
-    /* Футер */
-    .footer { text-align: center; padding: 60px 0; background: #2c3e50; color: #bdc3c7; border-radius: 40px 40px 0 0; }
-    .footer p { margin: 5px 0; }
-  </style>
-</head>
-<body>
-
+    .footer { text-align: center; padding: 80px 0; background: #2c3e50; color: #bdc3c7; border-radius: 60px 60px 0 0; }
+</style>
 <div class="hero-wrapper">
-  <div class="container hero-content">
-    <div class="hero-photo">
-      <img src="https://i.postimg.cc/ZK5jk5HD/Ava-dla-sajta.png" alt="Євген">
-    </div>
-    <div class="hero-text">
-      <h1>Євген</h1>
-      <p>Фахівець із наповнення та SEO-оптимізації карток для <strong>Prom.ua</strong></p>
-    </div>
-  </div>
+<div class="container hero-content">
+<div class="hero-photo"><img alt="Євген" src="https://i.postimg.cc/ZK5jk5HD/Ava-dla-sajta.png" /></div>
+
+<div class="hero-text">
+<h1>Євген</h1>
+
+<p>Професійна верстка та SEO-оптимізація карток для <strong>Prom.ua</strong></p>
+</div>
+</div>
 </div>
 
-<div class="container">
-  <div class="skills-row">
-    <div class="skill-item">
-      <h3><strong>Досвід на Prom.ua</strong></h3>
-      Знаю всі нюанси портальних категорій, налаштування характеристик та роботу з ProSale. Рейтинг заповнення карток 100%.
-    </div>
-    
-    <div class="skill-item">
-      <h3><strong>SEO & AI Оптимізація</strong></h3>
-      Створюю унікальні назви та описи через ШІ для масштабування контенту без втрати якості та змісту.
-    </div>
+<div class="container"><!-- Навички -->
+<div class="skills-row">
+<div class="skill-item">
+<h3><strong>Експерт Prom.ua</strong></h3>
+Знаю всі нюанси портальних категорій, налаштування характеристик та роботу з ProSale. Рейтинг заповнення карток 100%.</div>
 
-    <div class="skill-item">
-      <h3><strong>Робота з прайсами</strong></h3>
-      Масове редагування позицій (Excel/XML), структурування складних груп товарів та масова оптимізація «ключів».
-    </div>
+<div class="skill-item">
+<h3><strong>SEO &amp; AI Наповнення</strong></h3>
+Створюю унікальні назви та описи через ШІ для швидкого масштабування без втрати якості та змісту.</div>
 
-    <div class="skill-item">
-      <h3><strong>HTML/CSS Верстка</strong></h3>
-      Оформлюю описи товарів так, щоб вони виглядали професійно, мали заклики до дії та зручно читалися з телефонів.
-    </div>
-  </div>
+<div class="skill-item">
+<h3><strong>Робота з прайсами</strong></h3>
+Масове редагування через Excel/XML, структурування великих груп товарів та масова оптимізація &laquo;ключів&raquo;.</div>
 
-  <h2 class="section-title">Приклади робіт (Магазин «Клондайк»)</h2>
-  <div class="real-works">
-    <div class="work-card">
-      <div class="work-img">
-        <img src="https://images.prom.ua/6971848182_w640_h640_zminnij-modul-akvafor.jpg" alt="Аквафор">
-      </div>
-      <div class="work-desc">
-        <h4><strong>Змінний модуль Аквафор А5 Mg (Комплект 2 шт.) — робота з SEO</strong></h4>
-        <a href="https://klondajk.com.ua/ua/p2851329633-smennyj-modul-akvafor.html" target="_blank" class="btn-link">Переглянути роботу на Prom.ua</a>
-      </div>
-    </div>
+<div class="skill-item">
+<h3><strong>HTML/CSS Дизайн</strong></h3>
+Оформлюю описи так, щоб вони виглядали професійно, мали заклики до дії та були зручними для мобільних пристроїв.</div>
+</div>
 
-    <div class="work-card">
-      <div class="work-img">
-        <img src="https://images.prom.ua/7138205766_w640_h640_shlang-dlya-polivu.jpg" alt="Шланг">
-      </div>
-      <div class="work-desc">
-        <h4><strong>Шланг для поливу SANTEHPOLIV BLACK 3/4" х 30 м — структура</strong></h4>
-        <a href="https://klondajk.com.ua/ua/p2954377977-shlang-dlya-poliva.html" target="_blank" class="btn-link">Переглянути роботу на Prom.ua</a>
-      </div>
-    </div>
-  </div>
+<h2 class="section-title">Приклади робіт</h2>
 
-  <h2 class="section-title">Тестові кейси</h2>
-  <div class="case-links">
-    <a href="index.html">
-      <div class="case-box">
-        <img src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg" alt="Canon">
-        <div class="case-info">
-          <h3>Заправка картриджа Canon 728</h3>
-          <p>Кейс: Технічна таблиця та SEO-текст.</p>
-          <span class="btn-case"><strong>Дивитись результат</strong></span>
-        </div>
-      </div>
-    </a>
+<div class="works-grid">
+<div class="work-card">
+<div class="work-img"><img alt="Аквафор" src="https://images.prom.ua/6971848182_w640_h640_zminnij-modul-akvafor.jpg" /></div>
 
-    <a href="scooter.html">
-      <div class="case-box">
-        <img src="https://images.prom.ua/7257672033_w1280_h1280_begovel_dlya_detej.jpg?fresh=1" alt="Scooter">
-        <div class="case-info">
-          <h3>Біговел MBT Scooter</h3>
-          <p>Кейс: Емоційний опис для дитячих товарів.</p>
-          <span class="btn-case"><strong>Дивитись результат</strong></span>
-        </div>
-      </div>
-    </a>
-  </div>
+<div class="work-desc">
+<h4><strong>Змінний модуль Аквафор А5 Mg &mdash; робота з SEO</strong></h4>
+<a class="btn-action" href="https://klondajk.com.ua/ua/p2851329633-smennyj-modul-akvafor.html" target="_blank">Купити зараз</a></div>
+</div>
 
-  <div class="contacts-section">
-    <h3><strong>Обговоримо ваш проект?</strong></h3>
-    <p>Натисніть на іконку месенджера або скопіюйте емейл:</p>
-    
-    <div class="contact-buttons">
-      <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn" title="Viber">
-        <img src="https://i.postimg.cc/C1z1Q56p/Viber-Messenger.png" alt="Viber">
-      </a>
+<div class="work-card">
+<div class="work-img"><img alt="Шланг" src="https://images.prom.ua/7138205766_w640_h640_shlang-dlya-polivu.jpg" /></div>
 
-      <a href="https://t.me/evgen_chuikin" target="_blank" class="contact-icon-btn" title="Telegram">
-        <img src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" alt="Telegram">
-      </a>
-      
-      <button onclick="copyEmail()" class="contact-icon-btn" title="Копіювати Email">
-        <span id="copyTooltip" class="tooltip">Емейл скопійовано!</span>
-        <img src="https://i.postimg.cc/pLwqT5zg/Mail-Messenger.png" alt="Email">
-      </button>
-    </div>
-  </div>
+<div class="work-desc">
+<h4><strong>Шланг для поливу SANTEHPOLIV &mdash; структура</strong></h4>
+<a class="btn-action" href="https://klondajk.com.ua/ua/p2954377977-shlang-dlya-poliva.html" target="_blank">Купити зараз</a></div>
+</div>
+</div>
+
+<h2 class="section-title">Тестові кейси (Pixel Perfect)</h2>
+
+<div class="works-grid">
+<div class="case-box"><a href="index.html" style="text-decoration: none;"><img alt="Canon" src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg" /> </a>
+
+<div class="case-info">
+<h3><a href="index.html" style="text-decoration: none;">Canon 728</a></h3>
+
+<p><a href="index.html" style="text-decoration: none;">Кейс: Технічна таблиця та SEO-текст.</a></p>
+<a href="index.html" style="text-decoration: none;"><span class="btn-action" style="width:auto">Дивитись результат</span> </a></div>
+<a href="index.html" style="text-decoration: none;"> </a></div>
+
+<div class="case-box"><a href="scooter.html" style="text-decoration: none;"><img alt="Scooter" src="https://images.prom.ua/7257672033_w1280_h1280_begovel_dlya_detej.jpg?fresh=1" /> </a>
+
+<div class="case-info">
+<h3><a href="scooter.html" style="text-decoration: none;">MBT Scooter</a></h3>
+
+<p><a href="scooter.html" style="text-decoration: none;">Кейс: Емоційний опис для дитячих товарів.</a></p>
+<a href="scooter.html" style="text-decoration: none;"><span class="btn-action" style="width:auto">Дивитись результат</span> </a></div>
+<a href="scooter.html" style="text-decoration: none;"> </a></div>
+</div>
+<!-- КАЛЬКУЛЯТОР -->
+
+<div class="calculator-section">
+<h2 class="section-title" style="margin-top:0">Калькулятор послуг</h2>
+
+<div class="calc-card">
+<div class="calc-group"><label>Кількість товарів:</label> <input id="count" min="1" type="number" value="10" /></div>
+
+<div class="calc-group"><label>Тип послуги:</label> <select id="serviceType"><option value="50">Базове наповнення (50 грн/шт)</option><option value="80">SEO-оптимізація + ШІ (80 грн/шт)</option><option value="120">Повний цикл (120 грн/шт)</option> </select></div>
+
+<div class="calc-result" id="totalPrice">Разом: 500 грн <span class="discount-badge" id="discountMsg" style="display:none">🎁 Застосовано знижку 10% за обсяг!</span></div>
+</div>
+</div>
+
+<div class="contacts-section">
+<h2 class="section-title">Зв&#39;яжіться зі мною</h2>
+
+<div class="contact-buttons"><a class="contact-icon-btn" href="viber://chat?number=%2B380934503226" target="_blank"><img alt="Viber" src="https://i.postimg.cc/C1z1Q56p/Viber-Messenger.png" /></a> <a class="contact-icon-btn" href="https://t.me/evgen_chuikin" target="_blank"><img alt="Telegram" src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" /></a><button class="contact-icon-btn"><span class="tooltip" id="copyTooltip">Емейл скопійовано!</span> <img alt="Email" src="https://i.postimg.cc/pLwqT5zg/Mail-Messenger.png" /></button></div>
+</div>
 </div>
 
 <div class="footer">
-  <div class="container">
-    <p><strong>Євген</strong> — Контент-менеджер та SEO-спеціаліст маркетплейсів</p>
-    <p>© 2026. Всі права захищені.</p>
-  </div>
+<div class="container">
+<p><strong>Євген</strong> &mdash; Контент-менеджер та спеціаліст із розвитку маркетплейсів</p>
+
+<p>&copy; 2026. Працюємо на результат.</p>
 </div>
-
-<script>
-  function copyEmail() {
-    const email = 'zheka.chuikin@gmail.com';
-    const tempInput = document.createElement('textarea');
-    tempInput.value = email;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999);
-
-    try {
-      document.execCommand('copy');
-      const tooltip = document.getElementById('copyTooltip');
-      tooltip.classList.add('show');
-      setTimeout(() => {
-        tooltip.classList.remove('show');
-      }, 2000);
-    } catch (err) {
-      console.error('Не вдалося скопіювати', err);
-    }
-
-    document.body.removeChild(tempInput);
-  }
-</script>
-
-</body>
-</html>
+</div>
