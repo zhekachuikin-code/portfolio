@@ -108,18 +108,31 @@
       overflow: hidden; 
       box-sizing: border-box;
       padding: 10px;
+      cursor: pointer;
+      border: none;
+      position: relative;
     }
     
-    .contact-icon-btn img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .contact-icon-btn img { width: 100%; height: 100%; object-fit: contain; }
+    .contact-icon-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+    /* Підказка "Скопійовано" */
+    .tooltip {
+      position: absolute;
+      bottom: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      opacity: 0;
+      transition: 0.3s;
+      pointer-events: none;
+      white-space: nowrap;
     }
-    
-    .contact-icon-btn:hover { 
-      transform: translateY(-5px) scale(1.1); 
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+    .tooltip.show { opacity: 1; bottom: 95px; }
 
     /* Футер */
     .footer { text-align: center; padding: 60px 0; background: #2c3e50; color: #bdc3c7; border-radius: 40px 40px 0 0; }
@@ -213,7 +226,7 @@
 
   <div class="contacts-section">
     <h3><strong>Обговоримо ваш проект?</strong></h3>
-    <p>Я завжди на зв'язку. Натисніть на іконку зручного месенджера:</p>
+    <p>Я завжди на зв'язку. Оберіть зручний месенджер або скопіюйте емейл:</p>
     
     <div class="contact-buttons">
       <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn" title="Viber">
@@ -224,10 +237,11 @@
         <img src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" alt="Telegram">
       </a>
       
-      <!-- Додано автоматичну тему листа для кращого спрацювання -->
-      <a href="mailto:zheka.chuikin@gmail.com?subject=Пропозиція%20співпраці" class="contact-icon-btn" title="Email">
+      <!-- Кнопка копіювання пошти -->
+      <button onclick="copyEmail()" class="contact-icon-btn" title="Копіювати Email">
+        <span id="copyTooltip" class="tooltip">Емейл скопійовано!</span>
         <img src="https://i.postimg.cc/pLwqT5zg/Mail-Messenger.png" alt="Email">
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -238,6 +252,23 @@
     <p>© 2026. Всі права захищені.</p>
   </div>
 </div>
+
+<script>
+  function copyEmail() {
+    const email = 'zheka.chuikin@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+      const tooltip = document.getElementById('copyTooltip');
+      tooltip.classList.add('show');
+      setTimeout(() => {
+        tooltip.classList.remove('show');
+      }, 2000);
+    }).catch(err => {
+      console.error('Помилка копіювання: ', err);
+      // Запасний варіант, якщо браузер дуже старий
+      alert('Моя пошта: ' + email);
+    });
+  }
+</script>
 
 </body>
 </html>
