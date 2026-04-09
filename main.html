@@ -12,7 +12,6 @@
     .hero-wrapper { position: relative; width: 100%; padding: 80px 0; background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; border-radius: 0 0 50px 50px; overflow: hidden; }
     .hero-content { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
     
-    /* Оновлений блок фото: без рамок */
     .hero-photo { 
       width: 240px;
       height: 240px;
@@ -24,21 +23,13 @@
       border: none;
       padding: 0;
     }
-    
-    /* Сама фотографія: Виправлення центрування */
-    .hero-photo img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      /* <--- Цей рядок опускає фото нижче, щоб голова не зрізалася */
-      object-position: top center; 
-    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     
     .hero-text { flex: 1; min-width: 300px; }
     .hero-text h1 { font-size: 42px; margin: 0 0 10px 0; }
     .hero-text p { font-size: 22px; opacity: 0.9; margin: 0; }
 
-    /* Блок навичок (2х2 на ПК) */
+    /* Блок навичок */
     .skills-row { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
@@ -57,29 +48,42 @@
       .hero-content { flex-direction: column; text-align: center; gap: 20px; }
       .hero-text h1 { font-size: 32px; }
       .hero-text p { font-size: 18px; }
-      /* Розмір на мобілці */
-      .hero-photo { 
-        width: 200px; 
-        height: 200px; 
-        flex: 0 0 200px; 
-      }
+      .hero-photo { width: 200px; height: 200px; flex: 0 0 200px; }
     }
 
-    /* Заголовки секцій */
     .section-title { text-align: center; font-size: 32px; color: #2c3e50; margin: 60px 0 30px; }
 
-    /* Реальні роботи (Клондайк) */
+    /* Реальні роботи — Кнопки перегляду */
     .real-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
     .work-card { background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
-    .work-card:hover { border-color: #ff6700; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .work-card:hover { border-color: #2c3e50; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
     .work-img { height: 250px; padding: 15px; background: #fff; display: flex; align-items: center; justify-content: center; }
     .work-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
     .work-desc { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: center; }
-    .work-desc h4 { margin: 0 0 15px 0; font-size: 17px; line-height: 1.4; color: #333; height: 50px; overflow: hidden; }
-    .btn-link { display: block; text-align: center; padding: 12px; background: #f8f9fa; color: #666; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; margin-top: auto; border: 1px solid #eee; }
-    .btn-link:hover { background: #ff6700; color: white; border-color: #ff6700; }
+    .work-desc h4 { margin: 0 0 20px 0; font-size: 17px; line-height: 1.4; color: #333; height: 50px; overflow: hidden; }
+    
+    /* Стриманий стиль кнопки для портфоліо */
+    .btn-link { 
+      display: inline-block; 
+      text-align: center; 
+      padding: 12px 20px; 
+      background: #f1f3f5; 
+      color: #2c3e50; 
+      text-decoration: none; 
+      border-radius: 12px; 
+      font-weight: bold; 
+      transition: 0.3s; 
+      margin-top: auto; 
+      border: 1px solid #dee2e6;
+      font-size: 15px;
+    }
+    .btn-link:hover { 
+      background: #2c3e50; 
+      color: white; 
+      border-color: #2c3e50;
+    }
 
-    /* Тестові кейси (з фоновими фото) */
+    /* Тестові кейси */
     .case-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 80px; }
     .case-links a { text-decoration: none; color: inherit; display: block; }
     .case-box { position: relative; height: 300px; border-radius: 25px; overflow: hidden; cursor: pointer; background: #000; }
@@ -142,7 +146,7 @@
       </div>
       <div class="work-desc">
         <h4><strong>Змінний модуль Аквафор А5 Mg (Комплект 2 шт.) — робота з SEO</strong></h4>
-        <a href="https://klondajk.com.ua/ua/p2851329633-smennyj-modul-akvafor.html" target="_blank" class="btn-link"><strong>Купити зараз</strong></a>
+        <a href="https://klondajk.com.ua/ua/p2851329633-smennyj-modul-akvafor.html" target="_blank" class="btn-link">Переглянути роботу на Prom.ua</a>
       </div>
     </div>
 
@@ -152,7 +156,7 @@
       </div>
       <div class="work-desc">
         <h4><strong>Шланг для поливу SANTEHPOLIV BLACK 3/4" х 30 м — структура</strong></h4>
-        <a href="https://klondajk.com.ua/ua/p2954377977-shlang-dlya-poliva.html" target="_blank" class="btn-link"><strong>Купити зараз</strong></a>
+        <a href="https://klondajk.com.ua/ua/p2954377977-shlang-dlya-poliva.html" target="_blank" class="btn-link">Переглянути роботу на Prom.ua</a>
       </div>
     </div>
   </div>
