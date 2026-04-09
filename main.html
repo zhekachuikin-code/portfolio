@@ -1,21 +1,27 @@
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-<style type="text/css">body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #fdfdfd; }
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Євген — Портфоліо Контент-менеджера</title>
+  <style type="text/css">
+    body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #fdfdfd; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     
     /* Шапка сайту */
     .hero-wrapper { position: relative; width: 100%; padding: 80px 0; background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; border-radius: 0 0 50px 50px; overflow: hidden; }
     .hero-content { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
     
-    /* Оновлене фото: більше розмір, без білої окантовки */
+    /* Фото профілю: зафіксований розмір для ідеального кола */
     .hero-photo { 
-      flex: 0 0 190px; /* Трохи більше */
-      height: 190px; /* Трохи більше */
+      width: 190px;
+      height: 190px;
+      flex: 0 0 190px;
       border-radius: 50%; 
       overflow: hidden; 
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Тінь виразніша */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       background: #fff; 
-      border: none; /* Прибрали білу окантовку */
+      border: none;
     }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
     
@@ -42,7 +48,12 @@
       .hero-content { flex-direction: column; text-align: center; gap: 20px; }
       .hero-text h1 { font-size: 32px; }
       .hero-text p { font-size: 18px; }
-      .hero-photo { flex: 0 0 160px; height: 160px; } /* Трохи менше на мобілці */
+      /* Виправлення овалу на мобілці */
+      .hero-photo { 
+        width: 170px; 
+        height: 170px; 
+        flex: 0 0 170px; 
+      }
     }
 
     /* Заголовки секцій */
@@ -75,87 +86,103 @@
     /* Футер */
     .footer { text-align: center; padding: 60px 0; background: #2c3e50; color: #bdc3c7; border-radius: 40px 40px 0 0; }
     .footer p { margin: 5px 0; }
-</style>
+  </style>
+</head>
+<body>
+
 <div class="hero-wrapper">
-<div class="container hero-content">
-<div class="hero-photo"><img alt="Євген" src="https://i.postimg.cc/ZK5jk5HD/Ava-dla-sajta.png" style="width: 200px; height: 274px;" /></div>
-
-<div class="hero-text">
-<h1>Євген</h1>
-
-<p>Фахівець із наповнення та SEO-оптимізації карток для <strong>Prom.ua</strong></p>
-</div>
-</div>
+  <div class="container hero-content">
+    <div class="hero-photo">
+      <img src="https://i.postimg.cc/ZK5jk5HD/Ava-dla-sajta.png" alt="Євген">
+    </div>
+    <div class="hero-text">
+      <h1>Євген</h1>
+      <p>Фахівець із наповнення та SEO-оптимізації карток для <strong>Prom.ua</strong></p>
+    </div>
+  </div>
 </div>
 
 <div class="container">
-<div class="skills-row">
-<div class="skill-item">
-<h3><strong>Досвід на Prom.ua</strong></h3>
-Знаю всі нюанси портальних категорій, налаштування характеристик та роботу з ProSale. Рейтинг заповнення карток 100%.</div>
+  <div class="skills-row">
+    <div class="skill-item">
+      <h3><strong>Досвід на Prom.ua</strong></h3>
+      Знаю всі нюанси портальних категорій, налаштування характеристик та роботу з ProSale. Рейтинг заповнення карток 100%.
+    </div>
+    
+    <div class="skill-item">
+      <h3><strong>SEO & AI Оптимізація</strong></h3>
+      Створюю унікальні назви та описи через ШІ для масштабування контенту без втрати якості та змісту.
+    </div>
 
-<div class="skill-item">
-<h3><strong>SEO &amp; AI Оптимізація</strong></h3>
-Створюю унікальні назви та описи через ШІ для масштабування контенту без втрати якості та змісту.</div>
+    <div class="skill-item">
+      <h3><strong>Робота з прайсами</strong></h3>
+      Масове редагування позицій (Excel/XML), структурування складних груп товарів та масова оптимізація «ключів».
+    </div>
 
-<div class="skill-item">
-<h3><strong>Робота з прайсами</strong></h3>
-Масове редагування позицій (Excel/XML), структурування складних груп товарів та масова оптимізація &laquo;ключів&raquo;.</div>
+    <div class="skill-item">
+      <h3><strong>HTML/CSS Верстка</strong></h3>
+      Оформлюю описи товарів так, щоб вони виглядали професійно, мали заклики до дії та зручно читалися з телефонів.
+    </div>
+  </div>
 
-<div class="skill-item">
-<h3><strong>HTML/CSS Верстка</strong></h3>
-Оформлюю описи товарів так, щоб вони виглядали професійно, мали заклики до дії та зручно читалися з телефонів.</div>
-</div>
+  <h2 class="section-title">Приклади робіт (Магазин «Клондайк»)</h2>
+  <div class="real-works">
+    <div class="work-card">
+      <div class="work-img">
+        <img src="https://images.prom.ua/6971848182_w640_h640_zminnij-modul-akvafor.jpg" alt="Аквафор">
+      </div>
+      <div class="work-desc">
+        <h4><strong>Змінний модуль Аквафор А5 Mg (Комплект 2 шт.) — робота з SEO</strong></h4>
+        <a href="https://klondajk.com.ua/ua/p2851329633-smennyj-modul-akvafor.html" target="_blank" class="btn-link"><strong>Купити зараз</strong></a>
+      </div>
+    </div>
 
-<h2 class="section-title">Приклади робіт (Магазин &laquo;Клондайк&raquo;)</h2>
+    <div class="work-card">
+      <div class="work-img">
+        <img src="https://images.prom.ua/7138205766_w640_h640_shlang-dlya-polivu.jpg" alt="Шланг">
+      </div>
+      <div class="work-desc">
+        <h4><strong>Шланг для поливу SANTEHPOLIV BLACK 3/4" х 30 м — структура</strong></h4>
+        <a href="https://klondajk.com.ua/ua/p2954377977-shlang-dlya-poliva.html" target="_blank" class="btn-link"><strong>Купити зараз</strong></a>
+      </div>
+    </div>
+  </div>
 
-<div class="real-works">
-<div class="work-card">
-<div class="work-img"><img alt="Аквафор" src="https://images.prom.ua/6971848182_w640_h640_zminnij-modul-akvafor.jpg" /></div>
+  <h2 class="section-title">Тестові кейси</h2>
+  <div class="case-links">
+    
+    <a href="index.html">
+      <div class="case-box">
+        <img src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg" alt="Canon">
+        <div class="case-info">
+          <h3>Заправка картриджа Canon 728</h3>
+          <p>Кейс: Технічна таблиця та SEO-текст.</p>
+          <span class="btn-case"><strong>Дивитись результат</strong></span>
+        </div>
+      </div>
+    </a>
 
-<div class="work-desc">
-<h4><strong>Змінний модуль Аквафор А5 Mg (Комплект 2 шт.) &mdash; робота з SEO</strong></h4>
-<a class="btn-link" href="https://klondajk.com.ua/ua/p2851329633-smennyj-modul-akvafor.html" target="_blank"><strong>Купити зараз</strong></a></div>
-</div>
+    <a href="scooter.html">
+      <div class="case-box">
+        <img src="https://images.prom.ua/7257672033_w1280_h1280_begovel_dlya_detej.jpg?fresh=1" alt="Scooter">
+        <div class="case-info">
+          <h3>Біговел MBT Scooter</h3>
+          <p>Кейс: Емоційний опис для дитячих товарів.</p>
+          <span class="btn-case"><strong>Дивитись результат</strong></span>
+        </div>
+      </div>
+    </a>
 
-<div class="work-card">
-<div class="work-img"><img alt="Шланг" src="https://images.prom.ua/7138205766_w640_h640_shlang-dlya-polivu.jpg" /></div>
-
-<div class="work-desc">
-<h4><strong>Шланг для поливу SANTEHPOLIV BLACK 3/4&quot; х 30 м &mdash; структура</strong></h4>
-<a class="btn-link" href="https://klondajk.com.ua/ua/p2954377977-shlang-dlya-poliva.html" target="_blank"><strong>Купити зараз</strong></a></div>
-</div>
-</div>
-
-<h2 class="section-title">Тестові кейси</h2>
-
-<div class="case-links">
-<div class="case-box"><a href="index.html"><img alt="Canon" src="https://images.prom.ua/7256549130_w640_h2048_kartridzh_canon_728.jpg" /> </a>
-
-<div class="case-info">
-<h3><a href="index.html">Заправка картриджа Canon 728</a></h3>
-
-<p><a href="index.html">Кейс: Технічна таблиця та SEO-текст.</a></p>
-<a href="index.html"><span class="btn-case"><strong>Дивитись результат</strong></span> </a></div>
-<a href="index.html"> </a></div>
-
-<div class="case-box"><a href="scooter.html"><img alt="Scooter" src="https://images.prom.ua/7257672033_w1280_h1280_begovel_dlya_detej.jpg?fresh=1" /> </a>
-
-<div class="case-info">
-<h3><a href="scooter.html">Біговел MBT Scooter</a></h3>
-
-<p><a href="scooter.html">Кейс: Емоційний опис для дитячих товарів.</a></p>
-<a href="scooter.html"><span class="btn-case"><strong>Дивитись результат</strong></span> </a></div>
-<a href="scooter.html"> </a></div>
-</div>
+  </div>
 </div>
 
 <div class="footer">
-<div class="container">
-<p><strong>Євген</strong> &mdash; Контент-менеджер та SEO-спеціаліст маркетплейсів</p>
-
-<p>Працюю на результат, навіть у складних технічних нішах.</p>
-
-<p>&copy; 2026. Всі права захищені.</p>
+  <div class="container">
+    <p><strong>Євген</strong> — Контент-менеджер та SEO-спеціаліст маркетплейсів</p>
+    <p>Працюю на результат, навіть у складних технічних нішах.</p>
+    <p>© 2026. Всі права захищені.</p>
+  </div>
 </div>
-</div>
+
+</body>
+</html>
