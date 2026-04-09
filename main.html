@@ -14,15 +14,9 @@
     .hero-content { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
     
     .hero-photo { 
-      width: 240px;
-      height: 240px;
-      flex: 0 0 240px;
-      border-radius: 50%; 
-      overflow: hidden; 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      background: transparent; 
-      border: none;
-      padding: 0;
+      width: 240px; height: 240px; flex: 0 0 240px; border-radius: 50%; 
+      overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.4); 
+      background: transparent; border: none; padding: 0;
     }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     
@@ -30,15 +24,10 @@
     .hero-text h1 { font-size: 42px; margin: 0 0 10px 0; }
     .hero-text p { font-size: 22px; opacity: 0.9; margin: 0; }
 
-    /* Блок навичок (2х2 на ПК) */
+    /* Блок навичок (2х2) */
     .skills-row { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 25px; 
-      margin: -40px auto 60px; 
-      position: relative; 
-      z-index: 10; 
-      max-width: 1000px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 25px; 
+      margin: -40px auto 60px; position: relative; z-index: 10; max-width: 1000px;
     }
     .skill-item { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #ff6700; text-align: center; transition: 0.3s; }
     .skill-item:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
@@ -47,14 +36,12 @@
     @media (max-width: 768px) {
       .skills-row { grid-template-columns: 1fr; margin-top: 20px; padding: 0 10px; }
       .hero-content { flex-direction: column; text-align: center; gap: 20px; }
-      .hero-text h1 { font-size: 32px; }
-      .hero-text p { font-size: 18px; }
       .hero-photo { width: 200px; height: 200px; flex: 0 0 200px; }
     }
 
     .section-title { text-align: center; font-size: 32px; color: #2c3e50; margin: 60px 0 30px; }
 
-    /* Приклади робіт — Кнопки перегляду */
+    /* Приклади робіт — БЕЗ кнопок "Купити" */
     .real-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
     .work-card { background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
     .work-card:hover { border-color: #2c3e50; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
@@ -63,49 +50,36 @@
     .work-desc { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: center; }
     .work-desc h4 { margin: 0 0 20px 0; font-size: 17px; line-height: 1.4; color: #333; height: 50px; overflow: hidden; }
     
-    /* Стриманий стиль кнопки для портфоліо */
     .btn-link { 
-      display: inline-block; 
-      text-align: center; 
-      padding: 12px 20px; 
-      background: #f1f3f5; 
-      color: #2c3e50; 
-      text-decoration: none; 
-      border-radius: 12px; 
-      font-weight: bold; 
-      transition: 0.3s; 
-      margin-top: auto; 
-      border: 1px solid #dee2e6;
-      font-size: 15px;
+      display: inline-block; text-align: center; padding: 12px 20px; 
+      background: #f1f3f5; color: #2c3e50; text-decoration: none; 
+      border-radius: 12px; font-weight: bold; transition: 0.3s; 
+      margin-top: auto; border: 1px solid #dee2e6; font-size: 15px;
     }
-    .btn-link:hover { 
-      background: #2c3e50; 
-      color: white; 
-      border-color: #2c3e50;
-    }
+    .btn-link:hover { background: #2c3e50; color: white; border-color: #2c3e50; }
 
-    /* Тестові кейси (з виправленим контрастом) */
+    /* Тестові кейси — ЧИТАБЕЛЬНИЙ БІЛИЙ ТЕКСТ */
     .case-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 80px; }
     .case-links a { text-decoration: none; color: inherit; display: block; }
     .case-box { position: relative; height: 300px; border-radius: 25px; overflow: hidden; cursor: pointer; background: #000; }
     .case-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.5s; }
     .case-box:hover img { opacity: 0.4; transform: scale(1.05); }
     .case-info { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; }
-    /* Виправлений contrast h3 */
-    .case-info h3 { margin: 0 0 10px 0; font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); color: white; }
-    .case-info p { margin: 0 0 20px 0; font-size: 16px; opacity: 0.9; }
+    .case-info h3 { margin: 0 0 10px 0; font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); color: #ffffff !important; font-weight: bold; }
+    .case-info p { margin: 0 0 20px 0; font-size: 16px; opacity: 1; color: #ffffff; }
 
     /* Калькулятор послуг */
     .calculator-section { background: #f4f7f6; padding: 60px 0; border-radius: 40px; margin-bottom: 60px; }
-    .calc-card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; }
+    .calc-card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; text-align: center; }
     .calc-group { margin-bottom: 20px; text-align: left; }
     .calc-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
     .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; transition: 0.3s; }
     .calc-group input:focus { border-color: #ff6700; outline: none; }
-    .calc-result { margin-top: 30px; padding: 25px; background: #ff6700; color: white; border-radius: 20px; text-align: center; font-size: 24px; font-weight: bold; transition: 0.5s; }
+    
+    #totalPriceBox { margin-top: 30px; padding: 25px; background: #ff6700; color: white; border-radius: 20px; text-align: center; font-size: 24px; font-weight: bold; transition: 0.4s; }
     .discount-badge { font-size: 14px; display: block; opacity: 0.9; margin-top: 5px; font-weight: normal; }
 
-    /* Контакти — PNG іконки */
+    /* Контакти */
     .contacts-section { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
     .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
     .contact-icon-btn { 
@@ -121,14 +95,12 @@
     .tooltip { 
       position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%); 
       background: #333; color: #fff; padding: 5px 12px; 
-      border-radius: 8px; font-size: 12px; 
-      opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap; 
+      border-radius: 8px; font-size: 12px; opacity: 0; transition: 0.3s; 
+      pointer-events: none; white-space: nowrap; 
     }
     .tooltip.show { opacity: 1; bottom: 95px; }
 
-    /* Футер */
     .footer { text-align: center; padding: 60px 0; background: #2c3e50; color: #bdc3c7; border-radius: 40px 40px 0 0; }
-    .footer p { margin: 5px 0; }
   </style>
 </head>
 <body>
@@ -146,6 +118,7 @@
 </div>
 
 <div class="container">
+  <!-- Навички -->
   <div class="skills-row">
     <div class="skill-item">
       <h3><strong>Досвід на Prom.ua</strong></h3>
@@ -207,24 +180,25 @@
     </a>
   </div>
 
+  <!-- КАЛЬКУЛЯТОР -->
   <div class="calculator-section">
     <h2 class="section-title" style="margin-top: 0;">Калькулятор послуг</h2>
     <div class="calc-card">
       <div class="calc-group">
         <label>Кількість товарів:</label>
-        <input type="number" id="count" value="10" min="1" oninput="calculate()">
+        <input type="number" id="prodCount" value="10" min="1" oninput="calculatePrice()">
       </div>
       <div class="calc-group">
         <label>Тип послуги:</label>
-        <select id="serviceType" onchange="calculate()">
+        <select id="srvPrice" onchange="calculatePrice()">
           <option value="50">Базове наповнення (50 грн/шт)</option>
           <option value="80">SEO-оптимізація + ШІ (80 грн/шт)</option>
-          <option value="120">Повний цикл (SEO, Фото, Опис) (120 грн/шт)</option>
+          <option value="120">Повний цикл (120 грн/шт)</option>
         </select>
       </div>
-      <div class="calc-result" id="totalPrice">
-        Разом: 500 грн
-        <span id="discountMsg" class="discount-badge" style="display:none;">🎁 Застосовано знижку 10% за обсяг!</span>
+      <div id="totalPriceBox">
+        <span id="finalSum">Разом: 500 грн</span>
+        <span id="discMsg" class="discount-badge" style="display:none;">🎁 Застосовано знижку 10% за обсяг!</span>
       </div>
     </div>
   </div>
@@ -234,7 +208,7 @@
     <div class="contact-buttons">
       <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn"><img src="https://i.postimg.cc/C1z1Q56p/Viber-Messenger.png" alt="Viber"></a>
       <a href="https://t.me/evgen_chuikin" target="_blank" class="contact-icon-btn"><img src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" alt="Telegram"></a>
-      <button onclick="copyEmail()" class="contact-icon-btn">
+      <button onclick="copyMyEmail()" class="contact-icon-btn">
         <span id="copyTooltip" class="tooltip">Емейл скопійовано!</span>
         <img src="https://i.postimg.cc/pLwqT5zg/Mail-Messenger.png" alt="Email">
       </button>
@@ -244,50 +218,45 @@
 
 <div class="footer">
   <div class="container">
-    <p><strong>Євген</strong> — Контент-менеджер та спеціаліст із розвитку маркетплейсів</p>
-    <p>© 2026. Всі права захищені.</p>
+    <p><strong>Євген</strong> — Контент-менеджер та спеціаліст маркетплейсів</p>
+    <p>© 2026. Працюємо на результат.</p>
   </div>
 </div>
 
 <script>
-  function calculate() {
-    const count = document.getElementById('count').value;
-    const pricePerUnit = document.getElementById('serviceType').value;
-    let total = count * pricePerUnit;
-    const msg = document.getElementById('discountMsg');
-    const box = document.getElementById('totalPrice');
+  function calculatePrice() {
+    const cInput = document.getElementById('prodCount');
+    const sSelect = document.getElementById('srvPrice');
+    const box = document.getElementById('totalPriceBox');
+    const sumText = document.getElementById('finalSum');
+    const disc = document.getElementById('discMsg');
+
+    let count = parseInt(cInput.value) || 0;
+    let price = parseInt(sSelect.value);
+    let total = count * price;
 
     if (count >= 100) {
       total = total * 0.9;
-      msg.style.display = 'block';
+      disc.style.display = 'block';
       box.style.background = '#27ae60';
     } else {
-      msg.style.display = 'none';
+      disc.style.display = 'none';
       box.style.background = '#ff6700';
     }
-    box.innerHTML = 'Разом: ' + Math.round(total) + ' грн' + (count >= 100 ? '<span class="discount-badge">🎁 Застосовано знижку 10% за обсяг!</span>' : '');
+    sumText.innerText = 'Разом: ' + Math.round(total) + ' грн';
   }
 
-  function copyEmail() {
+  function copyMyEmail() {
     const email = 'zheka.chuikin@gmail.com';
     const tempInput = document.createElement('textarea');
     tempInput.value = email;
     document.body.appendChild(tempInput);
     tempInput.select();
-    tempInput.setSelectionRange(0, 99999);
-
-    try {
-      document.execCommand('copy');
-      const tooltip = document.getElementById('copyTooltip');
-      tooltip.classList.add('show');
-      setTimeout(() => {
-        tooltip.classList.remove('show');
-      }, 2000);
-    } catch (err) {
-      console.error('Помилка копіювання: ', err);
-    }
-
+    document.execCommand('copy');
     document.body.removeChild(tempInput);
+    const tip = document.getElementById('copyTooltip');
+    tip.classList.add('show');
+    setTimeout(() => tip.classList.remove('show'), 2000);
   }
 </script>
 
