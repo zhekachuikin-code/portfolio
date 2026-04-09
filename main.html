@@ -90,7 +90,7 @@
     .case-info p { margin: 0 0 20px 0; font-size: 16px; opacity: 0.9; }
     .btn-case { display: inline-block; width: fit-content; padding: 10px 25px; background: #ff6700; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; }
 
-    /* Блок контактів */
+    /* Контакти */
     .contacts-section { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
     .contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
     
@@ -116,7 +116,6 @@
     .contact-icon-btn img { width: 100%; height: 100%; object-fit: contain; }
     .contact-icon-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 
-    /* Підказка "Скопійовано" */
     .tooltip {
       position: absolute;
       bottom: 85px;
@@ -131,10 +130,10 @@
       transition: 0.3s;
       pointer-events: none;
       white-space: nowrap;
+      z-index: 100;
     }
     .tooltip.show { opacity: 1; bottom: 95px; }
 
-    /* Футер */
     .footer { text-align: center; padding: 60px 0; background: #2c3e50; color: #bdc3c7; border-radius: 40px 40px 0 0; }
     .footer p { margin: 5px 0; }
   </style>
@@ -154,6 +153,7 @@
 </div>
 
 <div class="container">
+  <!-- Блоки навичок -->
   <div class="skills-row">
     <div class="skill-item">
       <h3><strong>Досвід на Prom.ua</strong></h3>
@@ -226,7 +226,7 @@
 
   <div class="contacts-section">
     <h3><strong>Обговоримо ваш проект?</strong></h3>
-    <p>Я завжди на зв'язку. Оберіть зручний месенджер або скопіюйте емейл:</p>
+    <p>Натисніть на іконку месенджера або скопіюйте емейл:</p>
     
     <div class="contact-buttons">
       <a href="viber://chat?number=%2B380934503226" target="_blank" class="contact-icon-btn" title="Viber">
@@ -237,7 +237,7 @@
         <img src="https://i.postimg.cc/vZq0dSZw/Telegram-Messenger.png" alt="Telegram">
       </a>
       
-      <!-- Кнопка копіювання пошти -->
+      <!-- Кнопка копіювання -->
       <button onclick="copyEmail()" class="contact-icon-btn" title="Копіювати Email">
         <span id="copyTooltip" class="tooltip">Емейл скопійовано!</span>
         <img src="https://i.postimg.cc/pLwqT5zg/Mail-Messenger.png" alt="Email">
@@ -256,17 +256,26 @@
 <script>
   function copyEmail() {
     const email = 'zheka.chuikin@gmail.com';
-    navigator.clipboard.writeText(email).then(() => {
+    
+    // Створюємо тимчасове поле для тексту (найбільш сумісний метод для ПК)
+    const tempInput = document.createElement('textarea');
+    tempInput.value = email;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // Для мобільних
+
+    try {
+      document.execCommand('copy');
       const tooltip = document.getElementById('copyTooltip');
       tooltip.classList.add('show');
       setTimeout(() => {
         tooltip.classList.remove('show');
       }, 2000);
-    }).catch(err => {
-      console.error('Помилка копіювання: ', err);
-      // Запасний варіант, якщо браузер дуже старий
-      alert('Моя пошта: ' + email);
-    });
+    } catch (err) {
+      console.error('Не вдалося скопіювати', err);
+    }
+
+    document.body.removeChild(tempInput);
   }
 </script>
 
