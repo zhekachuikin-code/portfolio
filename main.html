@@ -71,9 +71,12 @@
     .calc-card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; text-align: center; }
     .calc-group { margin-bottom: 20px; text-align: left; }
     .calc-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50; }
-    .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; }
+    .calc-group input, .calc-group select { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 12px; font-size: 16px; outline: none; transition: 0.3s; }
+    .calc-group input:focus { border-color: #ff6700; }
     
-    #totalPriceBox { margin-top: 30px; padding: 25px; background: #ff6700; color: white; border-radius: 20px; text-align: center; font-size: 24px; font-weight: bold; transition: 0.4s; }
+    #totalPriceBox { margin-top: 30px; padding: 25px; background: #ff6700; color: white; border-radius: 20px; text-align: center; transition: 0.4s; }
+    #finalSum { display: block; font-size: 26px; font-weight: bold; }
+    #finalTime { display: block; font-size: 16px; margin-top: 10px; opacity: 0.9; font-weight: 500; }
     .discount-badge { font-size: 14px; display: block; opacity: 0.9; margin-top: 5px; font-weight: normal; }
 
     /* Контакти */
@@ -189,6 +192,7 @@
       </div>
       <div id="totalPriceBox">
         <span id="finalSum">Разом: 500 грн</span>
+        <span id="finalTime">Очікуваний термін: ~1-2 дні</span>
         <span id="discMsg" class="discount-badge" style="display:none;">🎁 Знижка 10% за обсяг!</span>
       </div>
     </div>
@@ -216,8 +220,11 @@
 
 <script>
   function calculatePrice() {
-    const count = parseInt(document.getElementById('prodCount').value) || 0;
+    const countInput = document.getElementById('prodCount');
+    const count = parseInt(countInput.value) || 0;
     const price = parseInt(document.getElementById('srvPrice').value);
+    
+    // Розрахунок ціни
     let total = count * price;
     const disc = document.getElementById('discMsg');
     const box = document.getElementById('totalPriceBox');
@@ -231,6 +238,27 @@
       box.style.background = '#ff6700';
     }
     document.getElementById('finalSum').innerText = 'Разом: ' + Math.round(total) + ' грн';
+
+    // Розрахунок часу (логіка з запасом)
+    let daysMin = 1;
+    let daysMax = 1;
+
+    if (price === 50) { // Базове
+       daysMin = Math.max(1, Math.floor(count / 60));
+       daysMax = Math.ceil(count / 40) + 1;
+    } else if (price === 80) { // SEO
+       daysMin = Math.max(1, Math.floor(count / 30));
+       daysMax = Math.ceil(count / 20) + 1;
+    } else if (price === 120) { // Повний
+       daysMin = Math.max(1, Math.floor(count / 20));
+       daysMax = Math.ceil(count / 10) + 1;
+    }
+
+    // Вивід терміну
+    let timeText = `Термін: ~${daysMin}-${daysMax} дн.`;
+    if (daysMax === 1) timeText = "Термін: ~1 день";
+    
+    document.getElementById('finalTime').innerText = timeText;
   }
 
   function copyMyEmail() {
@@ -245,6 +273,9 @@
     tip.classList.add('show');
     setTimeout(() => tip.classList.remove('show'), 2000);
   }
+  
+  // Запуск при завантаженні для коректних цифр
+  calculatePrice();
 </script>
 
 </body>
